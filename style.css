@@ -1,0 +1,240 @@
+:root {
+    --primary-dark: #333;
+    --primary-light: #ededed;
+    --secondary-light: #fefefe;
+  }
+
+  *,
+*::before,
+*::after {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+}
+
+html {
+    /* footer support */
+    position: relative;
+    min-height: 100%;
+  }
+
+  @font-face {
+    font-family: Neon;
+    src: url(Neon.ttf);
+  }
+
+
+  body {
+    background: #448aff;
+    overflow: hidden;
+    height: 100%;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-family: "arial", "helvetica", sans-serif;
+    font-size: none;
+    margin-top: 30px;
+}
+
+  h1 {
+    line-height: 1.2;
+  }
+
+  button,
+input {
+  width: auto;
+  border: none;
+  color: inherit;
+  font-family: inherit;
+  font-size: inherit;
+  cursor: pointer;
+  outline: none;
+}
+
+/* HEADER */
+
+.header {
+    padding: 30px 0;
+  }
+  
+  .title {
+    text-align: center;
+    font-size: 80px;
+  }
+
+  /* MAIN */
+
+.main {
+    display: flex;
+    flex-direction:column;
+    align-items: center;
+    justify-content: space-around;
+    box-sizing: border-box;
+    width: auto;
+    height: auto;
+    max-width: 1200px;
+    max-height: 1200px;
+    background: #f44336;
+    box-shadow: 0.25vw 0.25vw 0.25vw;
+    padding: 2%;
+  }
+
+  .name {
+    font-family: Neon;
+    color: white
+
+  }
+  
+  .settings {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 20px;
+    padding-top: 10px;
+    padding-bottom: 0;
+  }
+
+  .settings2 {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+    gap: 20px;
+    padding-top: 10px;
+    padding-bottom: 0;
+  }
+
+  .knob {
+    width: 4vmin;
+    height: 4vmin;
+    border-radius: 50%;
+    background: white;
+    box-shadow: 0.25vw 0.25vw 0.25vw;
+  }
+
+  button {
+    padding: 10px 10px;
+    border: 1px solid var(--primary-dark);
+    border-radius: 5px;
+  }
+  
+  button.active {
+    background-color: var(--primary-dark);
+    color: var(--primary-light);
+  }
+  
+  button,
+  input[type='color'] {
+    transition: transform 0.1s ease-in-out;
+  }
+  
+  button:hover,
+  input[type='color']:hover {
+    transform: scale(1.05);
+  }
+
+  input[type='color']:active {
+    transition: transform 0.05s ease-in-out;
+    transform: scale(1);
+  }
+  
+  input[type='color'] {
+    width: 40px;
+    height: 40px;
+    border: none;
+    background-color: #f44336;
+  }
+
+  input[type='color']::-webkit-color-swatch-wrapper {
+    padding: 0;
+  }
+  
+  input[type='color']::-webkit-color-swatch {
+    border: none;
+    border-radius: 50px;
+    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+  }
+  
+  .size-value {
+    font-family: Neon;
+    color: white;
+    margin-bottom: -20px;
+    font-size: 20px;
+  }
+  
+  input[type='range'] {
+    background-color: var(--primary-light);
+  }
+
+  input[type='range']::-webkit-slider-runnable-track {
+    height: 10px;
+    border: 1px solid var(--primary-dark);
+    border-radius: 25px;
+    background: var(--secondary-light);
+  }
+  
+  input[type='range']::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    width: 24px;
+    height: 24px;
+    border-radius: 25px;
+    margin-top: -8px;
+    background: var(--primary-dark);
+  }
+  
+  .grid {
+    display: grid;
+    height: 450px;
+    width: 450px;
+    background-color: var(--secondary-light);
+    box-shadow: 0.25vw 0.25vw 0.25vw inset, 
+    -0.25vw -0.25vw 0.25vw inset;
+  }
+  
+  .grid-element {
+    user-select: none;
+  }
+
+  /* FOOTER */
+
+.footer {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    width: 100%;
+    padding: 10px;
+    font-size: 20px;
+  }
+  
+  .fa-github {
+    color: var(--primary-dark);
+    font-size: 24px;
+    transition: transform 0.3s ease-in-out;
+  }
+  
+  .fa-github:hover {
+    transform: rotate(360deg) scale(1.2);
+  }
+  
+  /* MEDIA QUERIES */
+  
+  @media (max-width: 1200px) {
+    .main {
+      justify-content: center;
+    }
+  }
+  
+    .size-value {
+      margin-bottom: -4px;
+    }
+  
+  @media (max-width: 650px) {
+    .title {
+      font-size: 50px;
+    }
+}
